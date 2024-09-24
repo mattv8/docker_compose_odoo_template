@@ -35,12 +35,7 @@ Instructions assume you are starting in your home directory (e.g., `~/`).
     cd docker_compose_odoo_template
     ```
 
-4. Select Odoo version from the Supported tags:
-    - Go to the [Odoo official docker image](https://registry.hub.docker.com/_/odoo/).
-    - Select a tag from the Supported tags for your desired Odoo version (e.g., `16.0`).
-    - Update the first line in `dockerfile/odoo.Dockerfile` with the appropriate Odoo version. The default is `FROM odoo:14.0`.
-
-5. Update the `.env` file with your own values or use the defaults:
+4. Update the `.env` file with your own values or use the defaults:
     ```bash
     ## DATABASE INFO ##
     DB_IMAGE=postgres               # [Postgres oficial docker image](https://registry.hub.docker.com/_/postgres)
@@ -56,21 +51,21 @@ Instructions assume you are starting in your home directory (e.g., `~/`).
     HMR_MODULES_PATH=../hmr-odoo    # Relative path to Hammerton modules
     ```
 
-6. Before using the file you need to execute the build command. This step is executed only one time.
+5. Before using the file you need to execute the build command. This step is executed only one time.
     ```bash
     sudo docker compose build
     ```
 
-7. Start all the containers for the first time:
+6. Start all the containers for the first time:
     ```bash
     sudo docker compose up
     ```
 
-9. Open the Odoo instance (http://localhost:8069/)
+7. Open the Odoo instance (http://localhost:8069/)
     - The credentials are configured in the `.env` file.
     - Default login: `admin`, password: `admin`.
 
-10. Open the pgAdmin instance (http://localhost:8080/)
+8. Open the pgAdmin instance (http://localhost:8080/)
     - The credentials are configured in the `.env` file.
     - Default database password: `odoo` (or as defined in `.env`).
 
